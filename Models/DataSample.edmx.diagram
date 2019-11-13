@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4e49c79fc2014d2b976d0c1b9cdeed7b" Name="Diagram1">
+        <EntityTypeShape EntityType="MINIPROJECTModel.CreditCard_Details" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MINIPROJECTModel.LOGIN" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MINIPROJECTModel.Payee_details" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MINIPROJECTModel.Trans_details" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
+        <AssociationConnector Association="MINIPROJECTModel.FK__CreditCar__User___60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="MINIPROJECTModel.FK__Payee_det__Payee__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="MINIPROJECTModel.FK__Payee_det__User___3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="MINIPROJECTModel.FK__Trans_det__From___37A5467C" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

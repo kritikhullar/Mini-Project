@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MINIPROJECTModelStoreContainer" CdmEntityContainer="MINIPROJECTEntities">
+    <EntitySetMapping Name="CreditCard_Details">
+      <EntityTypeMapping TypeName="MINIPROJECTModel.CreditCard_Details">
+        <MappingFragment StoreEntitySet="CreditCard_Details">
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="User_ph_no" ColumnName="User_ph_no" />
+          <ScalarProperty Name="CC_No" ColumnName="CC_No" />
+          <ScalarProperty Name="Limit" ColumnName="Limit" />
+          <ScalarProperty Name="CVV" ColumnName="CVV" />
+          <ScalarProperty Name="EXP_dateyear" ColumnName="EXP_dateyear" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOGINs">
+      <EntityTypeMapping TypeName="MINIPROJECTModel.LOGIN">
+        <MappingFragment StoreEntitySet="LOGIN">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Pasword" ColumnName="Pasword" />
+          <ScalarProperty Name="C_Password" ColumnName="C_Password" />
+          <ScalarProperty Name="Email_id" ColumnName="Email_id" />
+          <ScalarProperty Name="Phone_no" ColumnName="Phone_no" />
+          <ScalarProperty Name="D_O_B" ColumnName="D_O_B" />
+          <ScalarProperty Name="Type_Acc" ColumnName="Type_Acc" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Opening_date" ColumnName="Opening_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payee_details">
+      <EntityTypeMapping TypeName="MINIPROJECTModel.Payee_details">
+        <MappingFragment StoreEntitySet="Payee_details">
+          <ScalarProperty Name="Payee_Id" ColumnName="Payee_Id" />
+          <ScalarProperty Name="User_no" ColumnName="User_no" />
+          <ScalarProperty Name="Payee_no" ColumnName="Payee_no" />
+          <ScalarProperty Name="Payee_NickName" ColumnName="Payee_NickName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Trans_details">
+      <EntityTypeMapping TypeName="MINIPROJECTModel.Trans_details">
+        <MappingFragment StoreEntitySet="Trans_details">
+          <ScalarProperty Name="Trans_Id" ColumnName="Trans_Id" />
+          <ScalarProperty Name="From_number" ColumnName="From_number" />
+          <ScalarProperty Name="To_number" ColumnName="To_number" />
+          <ScalarProperty Name="Trans_Amount" ColumnName="Trans_Amount" />
+          <ScalarProperty Name="Trans_Date" ColumnName="Trans_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

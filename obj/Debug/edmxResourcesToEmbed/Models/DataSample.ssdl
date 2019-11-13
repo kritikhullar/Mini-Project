@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MINIPROJECTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CreditCard_Details">
+    <Key>
+      <PropertyRef Name="Userid" />
+    </Key>
+    <Property Name="Userid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_ph_no" Type="bigint" />
+    <Property Name="CC_No" Type="nvarchar" MaxLength="16" />
+    <Property Name="Limit" Type="bigint" />
+    <Property Name="CVV" Type="int" />
+    <Property Name="EXP_dateyear" Type="int" />
+  </EntityType>
+  <EntityType Name="LOGINs">
+    <Key>
+      <PropertyRef Name="Phone_no" />
+    </Key>
+    <Property Name="UserName" Type="nvarchar" MaxLength="30" />
+    <Property Name="Pasword" Type="nvarchar" MaxLength="15" />
+    <Property Name="C_Password" Type="nvarchar" MaxLength="15" />
+    <Property Name="Email_id" Type="varchar" MaxLength="40" />
+    <Property Name="Phone_no" Type="bigint" Nullable="false" />
+    <Property Name="D_O_B" Type="datetime" />
+    <Property Name="Type_Acc" Type="varchar" MaxLength="20" />
+    <Property Name="Amount" Type="bigint" />
+    <Property Name="Opening_date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Payee_details">
+    <Key>
+      <PropertyRef Name="Payee_Id" />
+    </Key>
+    <Property Name="Payee_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_no" Type="bigint" />
+    <Property Name="Payee_no" Type="bigint" />
+    <Property Name="Payee_NickName" Type="varchar" MaxLength="40" />
+  </EntityType>
+  <EntityType Name="Trans_details">
+    <Key>
+      <PropertyRef Name="Trans_Id" />
+    </Key>
+    <Property Name="Trans_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="From_number" Type="bigint" />
+    <Property Name="To_number" Type="bigint" />
+    <Property Name="Trans_Amount" Type="bigint" />
+    <Property Name="Trans_Date" Type="datetime" />
+  </EntityType>
+  <Association Name="FK__CreditCar__User___60A75C0F">
+    <End Role="LOGINs" Type="Self.LOGINs" Multiplicity="0..1" />
+    <End Role="CreditCard_Details" Type="Self.CreditCard_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOGINs">
+        <PropertyRef Name="Phone_no" />
+      </Principal>
+      <Dependent Role="CreditCard_Details">
+        <PropertyRef Name="User_ph_no" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Payee_det__Payee__3B75D760">
+    <End Role="LOGINs" Type="Self.LOGINs" Multiplicity="0..1" />
+    <End Role="Payee_details" Type="Self.Payee_details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOGINs">
+        <PropertyRef Name="Phone_no" />
+      </Principal>
+      <Dependent Role="Payee_details">
+        <PropertyRef Name="Payee_no" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Payee_det__User___3A81B327">
+    <End Role="LOGINs" Type="Self.LOGINs" Multiplicity="0..1" />
+    <End Role="Payee_details" Type="Self.Payee_details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOGINs">
+        <PropertyRef Name="Phone_no" />
+      </Principal>
+      <Dependent Role="Payee_details">
+        <PropertyRef Name="User_no" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Trans_det__From___37A5467C">
+    <End Role="LOGINs" Type="Self.LOGINs" Multiplicity="0..1" />
+    <End Role="Trans_details" Type="Self.Trans_details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOGINs">
+        <PropertyRef Name="Phone_no" />
+      </Principal>
+      <Dependent Role="Trans_details">
+        <PropertyRef Name="From_number" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MINIPROJECTModelStoreContainer">
+    <EntitySet Name="CreditCard_Details" EntityType="Self.CreditCard_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LOGINs" EntityType="Self.LOGINs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Payee_details" EntityType="Self.Payee_details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Trans_details" EntityType="Self.Trans_details" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__CreditCar__User___60A75C0F" Association="Self.FK__CreditCar__User___60A75C0F">
+      <End Role="LOGINs" EntitySet="LOGINs" />
+      <End Role="CreditCard_Details" EntitySet="CreditCard_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Payee_det__Payee__3B75D760" Association="Self.FK__Payee_det__Payee__3B75D760">
+      <End Role="LOGINs" EntitySet="LOGINs" />
+      <End Role="Payee_details" EntitySet="Payee_details" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Payee_det__User___3A81B327" Association="Self.FK__Payee_det__User___3A81B327">
+      <End Role="LOGINs" EntitySet="LOGINs" />
+      <End Role="Payee_details" EntitySet="Payee_details" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Trans_det__From___37A5467C" Association="Self.FK__Trans_det__From___37A5467C">
+      <End Role="LOGINs" EntitySet="LOGINs" />
+      <End Role="Trans_details" EntitySet="Trans_details" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
